@@ -18,7 +18,7 @@
  * Autolinker.js
  * 0.22.0
  *
- * Copyright(c) 2015 Gregory Jacobs <greg@greg-jacobs.com>
+ * Copyright(c) 2016 Gregory Jacobs <greg@greg-jacobs.com>
  * MIT
  *
  * https://github.com/gregjacobs/Autolinker.js
@@ -1871,7 +1871,7 @@ Autolinker.matchParser.MatchParser = Autolinker.Util.extend( Object, {
 	matcherRegex : (function() {
 		var twitterRegex = /(^|[^\w])@(\w{1,15})/,              // For matching a twitter handle. Ex: @gregory_jacobs
 
-		    hashtagRegex = /(^|[^\w])#(\w{1,139})/,              // For matching a Hashtag. Ex: #games
+		    hashtagRegex = /(^|[^\w])#([\u00C0-\u1FFF\u2C00-\uD7FF\w]{1,139})/,             // For matching a Hashtag. Ex: #games
 
 		    emailRegex = /(?:[\-;:&=\+\$,\w\.]+@)/,             // something@ for email addresses (a.k.a. local-part)
 		    phoneRegex = /(?:(\+)?\d{1,3}[-\040.])?\(?\d{3}\)?[-\040.]?\d{3}[-\040.]\d{4}/,  // ex: (123) 456-7890, 123 456 7890, 123-456-7890, etc.
